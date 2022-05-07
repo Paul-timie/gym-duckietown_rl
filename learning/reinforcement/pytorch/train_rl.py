@@ -124,9 +124,11 @@ def _train(args):
         episode_timesteps += 1
         total_timesteps += 1
         timesteps_since_eval += 1
-
+    evaluations.append(evaluate_policy(env, policy))
     print("Training done, about to save..")
     policy.save(filename="ddpg", directory=args.model_dir)
+    np.savez("./results/{}.npz".format(file_name), evaluations)
+
     print("Finished saving..should return now!")
 
 

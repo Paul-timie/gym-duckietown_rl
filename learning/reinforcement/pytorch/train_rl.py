@@ -140,8 +140,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--start_timesteps", default=1e3, type=int
     )  # How many time steps purely random policy is run for
-    parser.add_argument("--eval_freq", default=5e3, type=float)  # How often (time steps) we evaluate
-    parser.add_argument("--max_timesteps", default=1e3, type=float)  # Max time steps to run environment for
+    parser.add_argument("--eval_freq", default=250, type=float)  # How often (time steps) we evaluate
+    parser.add_argument("--max_timesteps", default=2000, type=float)  # Max time steps to run environment for
     parser.add_argument("--save_models", action="store_true", default=True)  # Whether or not models are saved
     parser.add_argument("--expl_noise", default=0.1, type=float)  # Std of Gaussian exploration noise
     parser.add_argument("--batch_size", default=32, type=int)  # Batch size for both actor and critic
@@ -154,7 +154,7 @@ if __name__ == "__main__":
     parser.add_argument("--policy_freq", default=2, type=int)  # Frequency of delayed policy updates
     parser.add_argument("--env_timesteps", default=500, type=int)  # Frequency of delayed policy updates
     parser.add_argument(
-        "--replay_buffer_max_size", default=10000, type=int
+        "--replay_buffer_max_size", default=500, type=int
     )  # Maximum number of steps to keep in the replay buffer
     parser.add_argument("--model-dir", type=str, default="reinforcement/pytorch/models/")
 
